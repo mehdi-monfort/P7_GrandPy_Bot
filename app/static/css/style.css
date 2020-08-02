@@ -1,4 +1,6 @@
 * {
+  margin:0;
+  padding:0;
   list-style:  none;
 }
 
@@ -15,6 +17,14 @@
   background: #5EB6DD;
 }
 
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .img {
   border-width: 5px;
   border-style: solid;
@@ -23,6 +33,11 @@
 
 .footer {
   display: flex;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding-top:50px;
+  height:50px;
   align-items: center;
   justify-content: flex-end;
   border-top: : 1px;
@@ -32,9 +47,3 @@
   border-color: #5EB6DD;
 }
 
-.form {
-  border-width: 4px;
-  border-bottom: 1px;
-  border-style: solid;
-  border-color: #5EB6DD;
-}
