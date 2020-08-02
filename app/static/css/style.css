@@ -1,0 +1,40 @@
+* {
+  list-style:  none;
+}
+
+.tile {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: x-large;
+  background: #5EB6DD;
+}
+
+.img {
+  border-width: 5px;
+  border-style: solid;
+  border-color: #5EB6DD;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: : 1px;
+  padding-top: 4px;
+  padding-right: 4px;
+  border-style: solid;
+  border-color: #5EB6DD;
+}
+
+.form {
+  border-width: 4px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #5EB6DD;
+}
