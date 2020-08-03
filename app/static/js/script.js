@@ -1,7 +1,7 @@
 $(function() {
   
 	var $list, $newItemForm;
-	$list = $('div');
+	$list = $('ul');
 	$newItemForm = $('#newItemForm');
 
 	$newItemForm.on('submit', function(validate) {
