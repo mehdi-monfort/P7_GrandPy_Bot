@@ -5,24 +5,19 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/css/style.css" />
+    <Link rel="icon" href="static/img/favicon.ico" type="image/x-icon" />
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js">
+    </script>
     <title>Accueil</title>
-    <script src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
     <script src="/static/js/script.js"></script>
   </head>
   <header class="header">
-    <img class="img" src="static/img/robot.webp" alt="" width="10%">
+    <img class="img" src="static/img/robot.png" alt="">
     <p class="one">Bonjour, comment puis-je vous aidez?</p>
   </header>
   <body class="body">
-    <form class="form" id="newItemForm">
-      <input type="text"placeholder="Entrer ici votre demande" />
-      <input type="submit" value="Submit" />
-    </form>
-    <div class="flexbox-container">
-      <div class="response"><ul></ul></div>
-      <div class="first-child">maps</div>
-      <div class="scd-child">wikimedia</div>
-    </div>
+    {% block body%}{% endblock %}
   </body>
   <footer class="footer">
     <li class="name">MONFORT Mehdi</li>

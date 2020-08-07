@@ -1,14 +1,6 @@
-$(function() {
-  
-	var $list, $newItemForm;
-	$list = $('ul');
-	$newItemForm = $('#newItemForm');
+let form = document.querySelector("#user-text-form");
 
-	$newItemForm.on('submit', function(validate) {
-	validate.preventDefault();
-	var text = $('input:text').val();
-	$list.text(text);
-	$('input:text').val('');
-	});
-
-});
+form.addEventListener("submit", function (event) {
+	event.preventDefault();
+	console.log("message envoyer")
+})
