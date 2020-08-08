@@ -1,7 +1,8 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 
 
 from . import app
+from .map.maps import *
 
 @app.route('/')
 def home():
@@ -13,5 +14,8 @@ def page_not_found(error):
 
 @app.route("/ajax", methods=["POST"])
 def ajax():
-	return jsonify("pas de reponse")
+	user_text = request.form["userText"]
+	response = geocode(user_text)
+	print(response)
+	return jsonify(response)
 
