@@ -1,10 +1,10 @@
-* {
+/** :not(div){
   margin:0;
   padding:0;
-  list-style:  none;
+  list-style: none;
   background-color: #5D6FA1;
 }
-
+*/
 .submit{
   height:0;
   width:0;
@@ -19,6 +19,7 @@
   font-size: x-large;
   max-height: 200px;
   margin-bottom: 20px;
+  background-color: #5D6FA1;
 }
 
 .img {
@@ -44,15 +45,28 @@ input[type=text] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 90%;
   justify-content: center;
   align-items: center;
   align-content: stretch;
 }
 
-.maps {
-  align-self: stretch;
-  order: 1;
-  flex: 4;
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60%;
+  width: 60%;
   flex-grow: 0;
   flex-shrink: 0;
   border-style: solid;

@@ -1,6 +1,7 @@
 {% extends 'layout/index.html' %}
 
 {% block body %}
+
   <form id="user-text-form">
     <p>
       <label for="userText"></label>
@@ -8,10 +9,13 @@
       <input type="submit" value="Envoyer">
     </p>
   </form>
-    <div class="response" id="response">reponse:<ul id="response"></ul></div>
-    <div class="container">
-      <div class="maps">maps</div>
-      <div class="wiki">wikimedia</div>
-    </div>
+  <div id="container" class="container">
+  <div id="map" class="map"></div>
+  <div id="wiki" class="wiki"></div>
+  </div>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfj-HkzRCJiPZDLnZYTG2bQgjXSXKDQHA&callback=initMap&libraries=&v=weekly&callback=initMap"
+    ></script>
+    <script src="/static/js/script.js"></script>
 
 {% endblock %}

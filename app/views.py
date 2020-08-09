@@ -12,8 +12,8 @@ def home():
 def page_not_found(error):
 	return render_template('errors/404.html'), 404
 
-@app.route("/ajax", methods=["POST"])
-def ajax():
+@app.route("/map", methods=["POST"])
+def map():
 	user_text = request.form["userText"]
 	response = geocode(user_text)
 	print(response)

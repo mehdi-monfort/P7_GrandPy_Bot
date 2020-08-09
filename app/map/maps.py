@@ -18,9 +18,9 @@ def geocode(address):
         return result["results"]
 
     raise Exception(result["error_message"])
-    address= input()
-    results = geocode(address.replace(' ', '+'))
-    # for r in results:
-    #     place_id = json.dumps([r["place_id"]])
+    # address= input()
+    # results = geocode(address.replace(' ', '+'))
+    # # for r in results:
+    # #     place_id = json.dumps([r["place_id"]])
 
-    #     return place_id
+    # #     return place_id
