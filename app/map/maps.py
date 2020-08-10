@@ -1,26 +1,19 @@
 # coding: utf-8
 import os
-import json
-import urllib.request
-# import gmaps
+import requests
+from pprint import pprint
 from .constants import API_KEY, GEOCODE_BASE_URL
 
-# class maps:
     
 def geocode(address):
 
-    params = urllib.parse.urlencode({"address": address, "key": API_KEY,})
-    url = f"{GEOCODE_BASE_URL}?{params}"
+    params = {
+    	"address": address,
+    	"key": API_KEY,
+    	}
 
-    result = json.load(urllib.request.urlopen(url))
+    url = f"{GEOCODE_BASE_URL}"
+    result = requests.get(url, params=params)
+    response = result.json()
 
-    if result["status"] in ["OK", "ZERO_RESULTS"]:
-        return result["results"]
-
-    raise Exception(result["error_message"])
-    # address= input()
-    # results = geocode(address.replace(' ', '+'))
-    # # for r in results:
-    # #     place_id = json.dumps([r["place_id"]])
-
-    # #     return place_id
+    return response
