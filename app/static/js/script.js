@@ -9,36 +9,37 @@ function postFormData(url, data) {
 	.catch(error => console.log(error));
 }
 
-
 form.addEventListener("submit", function (event) {
 	event.preventDefault();
 	console.log("message envoyer")
 
     postFormData("/map", new FormData(form))
+
     .then(response => {
-    	const lat = response[0]['geometry']["location"]["lat"];
-    	const lng = response[0]['geometry']["location"]["lng"];
-    	console.log(lat, lng)
+    	const loc = response[0];
+    	displayMap(loc);
+    	const extract = response[1]
+    	displayWiki(extract);
     })
+
 })
 
-
-function initMap() {
+function displayMap(loc) {
 	const map = new google.maps.Map(document.getElementById("map"), {
-		  zoom: 8,
-		  center: {
-			  lat: 48.856614,
-			  lng: 2.3522219
-		    }
+		  zoom: 10,
+		  center: loc
 	});
 	const image =
 	    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 	const beachMarker = new google.maps.Marker({
-	    position: {
-		  lat: 48.856614,
-		  lng: 2.3522219
-	    },
+	    position: loc,
 	    map,
 	    icon: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png"
 	});
+}
+
+function displayWiki(extract) {
+	let wiki = document.getElementById("wiki");
+	wiki.innerHTML = extract
+	document.getElementById("wiki").style.fontSize="14px"
 }

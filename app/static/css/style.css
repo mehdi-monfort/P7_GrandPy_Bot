@@ -1,10 +1,48 @@
-/** :not(div){
+* {
   margin:0;
   padding:0;
   list-style: none;
-  background-color: #5D6FA1;
 }
-*/
+
+/** {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+
+body {
+ height: 100vh;
+ display: grid;
+ grid-template-rows: 50px 1fr 50px;
+ grid-template-columns: 100%;
+ grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+ margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: line;
+  gid-area: header;
+  background-color: #ccc;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+footer {
+  display: flex;
+  flex-direction: line;
+  grid-area: footer;
+  background-color: #ccc;
+}*/
+
 .submit{
   height:0;
   width:0;
@@ -43,15 +81,14 @@ input[type=text] {
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  height: 90%;
+  height: 75%;
   justify-content: center;
   align-items: center;
   align-content: stretch;
 }
 
-/* Optional: Makes the sample page fill the window. */
 html,
 body {
   height: 100%;
@@ -65,10 +102,10 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  height: 60%;
-  width: 60%;
-  flex-grow: 0;
-  flex-shrink: 0;
+  order: 2;
+  flex: 7;
+  height: 500px;
+  width: 90%;
   border-style: solid;
   border-radius: 10px;
   font-size: 24px;
@@ -76,32 +113,25 @@ body {
 
 .wiki {
   align-self: stretch;
-  order: 2;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  order: 1;
   flex: 2;
-  flex-grow: 0;
-  flex-shrink: 0;
+  width: 90%;
+  height: 200px;
   border-style: solid;
   border-radius: 10px;
   font-size: 24px;
 }
 
-.response {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width:90%;
-  height: 30px;
-  border-style: solid;
-  border-radius: 10px;
-}
-
 .footer {
   display: flex;
-  margin-top: 40px;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
   flex-shrink: 0;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  background-color: #5D6FA1;
 }

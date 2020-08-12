@@ -26,7 +26,6 @@ def wiki():
         "prop": "extracts|info",
         "inprop": "url",
         "explaintext": 1,
-        "exintro": True,
         "pageids": page_id
     }
 
@@ -34,7 +33,7 @@ def wiki():
     result.raise_for_status()
 
     response_wiki = result.json()
-    return response_wiki['query']['pages'][str(page_id)]['extract']
-
+    return response_wiki
+    print(response['query']['pages'][str(page_id)]['extract'])
 
 # faire class puis faire les test avec pytest

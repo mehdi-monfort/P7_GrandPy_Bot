@@ -1,8 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 
-
+from pprint import pprint
 from . import app
 from .map.maps import *
+from .wiki.wiki import *
 
 @app.route('/')
 def home():
@@ -14,8 +15,9 @@ def page_not_found(error):
 
 @app.route("/map", methods=["POST"])
 def map():
-	user_text = request.form["userText"]
-	response = geocode(user_text)
-	print(response)
+	response = []
+	response.append(geocode(request.form["userText"]))
+	response.append(wiki())
 	return jsonify(response)
 
+# mettre chargement
