@@ -2,8 +2,8 @@ from flask import Flask, render_template, jsonify, request
 
 from pprint import pprint
 from . import app
-from .map.maps import *
-from .wiki.wiki import *
+from .view.maps import *
+from .view.wiki import *
 
 @app.route('/')
 def home():
@@ -13,11 +13,13 @@ def home():
 def page_not_found(error):
 	return render_template('errors/404.html'), 404
 
-@app.route("/map", methods=["POST"])
-def map():
+@app.route("/robot", methods=["POST"])
+def robot():
 	response = []
-	response.append(geocode(request.form["userText"]))
-	response.append(wiki())
+	location = maps.geocode(request.form["userText"])
+	response.append(location)
+	lat = location["lat"]
+	lng = location["lng"]
+	response.append(Wiki.extract(lat, lng))
+	
 	return jsonify(response)
-
-# mettre chargement
