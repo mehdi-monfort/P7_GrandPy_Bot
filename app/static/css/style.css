@@ -17,12 +17,12 @@
   align-items: center;
   justify-content: center;
   font-size: x-large;
-  max-height: 200px;
+  min-height: 55px;
   margin-bottom: 20px;
   background-color: #5D6FA1;
 }
 
-body{
+.body{
   font-family: sans-serif; 
   background:#191919;
 }
@@ -56,6 +56,34 @@ input[type=text] {
   scrollbar-width: thin;
 }
 
+#message {
+  background:#759d61; 
+  padding: 15px; 
+  border-radius:3px; 
+  max-width:50%;
+  align-self: stretch;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 50%;
+  border-style: hidden;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.messageRobo {
+  background:#5D6FA1; 
+  color:#fff; 
+  padding: 15px; 
+  border-radius:3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-style: hidden;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 50%;
+}
+
 #wiki {
   background:#5D6FA1; 
   color:#fff; 
@@ -65,8 +93,6 @@ input[type=text] {
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  margin-left: 20%;
-  margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
   width: 70%;

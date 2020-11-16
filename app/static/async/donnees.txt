@@ -1,7 +1,0 @@
-{
-	"utilisateurs":[
-	{"prenom":"jean, "age:"22, "sexe":"m"},
-    {"prenom":"alexa, "age:"24, "sexe":"f"},
-    {"prenom":"paul, "age:"48, "sexe":"m"},
-	]
-}

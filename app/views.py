@@ -17,9 +17,11 @@ def page_not_found(error):
 def robot():
 	response = []
 	location = maps.geocode(request.form["userText"])
-	response.append(location)
 	lat = location["lat"]
 	lng = location["lng"]
+	response.append(request.form["userText"])
+	response.append(location)
 	response.append(Wiki.extract(lat, lng))
-	
 	return jsonify(response)
+
+# mettre chargement

@@ -1,7 +1,7 @@
 let form = document.querySelector("#user-text-form");
 
 function postFormData(url, data) {
-	return fetch("/map", {
+	return fetch("/robot", {
 		method: "POST",
 		body: data
 	})
@@ -11,22 +11,46 @@ function postFormData(url, data) {
 
 form.addEventListener("submit", function (event) {
 	event.preventDefault();
-	console.log("message envoyer")
-
-    postFormData("/map", new FormData(form))
-
+    postFormData("/view", new FormData(form))
     .then(response => {
-    	const loc = response[0];
+    	const submit = response[0];
+    	displayMessage(submit);
+    	const loc = response[1];
+    	console.log(loc)
     	displayMap(loc);
-    	const extract = response[1]
+    	const extract = response[2]
     	displayWiki(extract);
     })
-
 })
 
+function displayMessage(submit) {
+	const parent = document.querySelector("ul");
+	const child = document.createElement("p");
+	child.id = "message";
+	child.classList.add("message");
+	parent.appendChild(child);
+	let message = child;
+	message.innerHTML = submit
+}
+
+function displayWiki(extract) {
+	const parent = document.querySelector("ul");
+	const child = document.createElement("p");
+	child.id = "wiki";
+	child.classList.add("wiki");
+	parent.appendChild(child);
+	let wiki = child;
+	wiki.innerHTML = extract
+}
+
 function displayMap(loc) {
-	const map = new google.maps.Map(document.getElementById("map"), {
-		  zoom: 10,
+	const parent = document.querySelector("ul");
+	const child = document.createElement("div");
+	child.id = "map";
+	child.classList.add("map");
+	parent.appendChild(child);
+	const map = new google.maps.Map(child, {
+		  zoom: 14,
 		  center: loc
 	});
 	const image =
@@ -36,10 +60,4 @@ function displayMap(loc) {
 	    map,
 	    icon: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png"
 	});
-}
-
-function displayWiki(extract) {
-	let wiki = document.getElementById("wiki");
-	wiki.innerHTML = extract
-	document.getElementById("wiki").style.fontSize="14px"
 }

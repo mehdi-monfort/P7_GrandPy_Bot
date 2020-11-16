@@ -13,7 +13,6 @@ class maps:
             "key": API_KEY,
             "region": 'FR',
             }
-
         url = f"{GEOCODE_BASE_URL}"
         result = requests.get(url, params=params)
         response_map = result.json()
