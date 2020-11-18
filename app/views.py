@@ -4,6 +4,7 @@ from pprint import pprint
 from . import app
 from .view.maps import *
 from .view.wiki import *
+from .view.main import *
 
 @app.route('/')
 def home():
@@ -15,13 +16,9 @@ def page_not_found(error):
 
 @app.route("/robot", methods=["POST"])
 def robot():
-	response = []
-	location = maps.geocode(request.form["userText"])
-	lat = location["lat"]
-	lng = location["lng"]
-	response.append(request.form["userText"])
-	response.append(location)
-	response.append(Wiki.extract(lat, lng))
+	main = Main()
+	response = main.query(request.form["userText"])
+	print(response)
 	return jsonify(response)
 
 # mettre chargement

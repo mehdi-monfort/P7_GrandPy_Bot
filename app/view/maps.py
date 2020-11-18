@@ -5,7 +5,7 @@ from .constants import API_KEY, GEOCODE_BASE_URL
 from pprint import pprint
 
 
-class maps:
+class Maps:
 
     def geocode(address):
         params = {
@@ -14,12 +14,12 @@ class maps:
             "region": 'FR',
             }
         url = f"{GEOCODE_BASE_URL}"
-        result = requests.get(url, params=params)
-        response_map = result.json()
-        location = {'lat': 1, 'lng': 1}
-
-        return response_map['results'][0]['geometry']['location']
-        # return response_map['results'][0]['formatted_address']
+        try:
+            result = requests.get(url, params=params)
+            response_map = result.json()
+            return response_map['results'][0]['geometry']['location']
+        except IndexError:
+            pass
+        # print(response_map['results'][0]['geometry']['location'])
 
 # print(os.getenv('MAPS'))
-# maps.geocode('peux tu me dire quel est la capitale de la france?')

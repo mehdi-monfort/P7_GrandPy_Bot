@@ -13,24 +13,43 @@ form.addEventListener("submit", function (event) {
 	event.preventDefault();
     postFormData("/view", new FormData(form))
     .then(response => {
-    	const submit = response[0];
-    	displayMessage(submit);
-    	const loc = response[1];
-    	console.log(loc)
-    	displayMap(loc);
-    	const extract = response[2]
-    	displayWiki(extract);
+		if(response[3]) {
+			const submit = response[0]
+			displayMessageUser(submit);
+			const mess = response[1]
+			displayMessageRobo(mess);	
+			const loc = response[2];
+			displayMap(loc);
+			const extract = response[3]
+			displayWiki(extract);
+	    }
+	    else {
+			const submit = response[0]
+			displayMessageUser(submit);
+			const mess = response[1]
+			displayMessageRobo(mess);
+	    }
     })
 })
 
-function displayMessage(submit) {
+function displayMessageUser(submit) {
 	const parent = document.querySelector("ul");
 	const child = document.createElement("p");
-	child.id = "message";
-	child.classList.add("message");
+	child.id = "messageUser";
+	child.classList.add("messageUser");
 	parent.appendChild(child);
-	let message = child;
-	message.innerHTML = submit
+	let messageUser = child;
+	messageUser.innerHTML = submit
+}
+
+function displayMessageRobo(mess) {
+	const parent = document.querySelector("ul");
+	const child = document.createElement("p");
+	child.id = "messageRobo";
+	child.classList.add("messageRobo");
+	parent.appendChild(child);
+	let messageRobo = child;
+	messageRobo.innerHTML = mess
 }
 
 function displayWiki(extract) {

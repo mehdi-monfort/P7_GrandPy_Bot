@@ -19,7 +19,7 @@ class Wiki:
         response = requests.get(url, params=params)
         geosearch_data = response.json()
         page_id = geosearch_data['query']['geosearch'][0]['pageid']
-        pprint(geosearch_data)
+        # pprint(geosearch_data)
 
         params = {
             "format": "json",
@@ -36,9 +36,8 @@ class Wiki:
         result.raise_for_status()
 
         response_wiki = result.json()
-        print(response_wiki['query']['pages'][str(page_id)]['extract'])
+        # print(response_wiki['query']['pages'][str(page_id)]['extract'])
         return response_wiki['query']['pages'][str(page_id)]['extract']
 
-# wiki.wiki("48.8499198", "2.6370411")
 # faire class puis faire les test avec pytest
-Wiki.extract("48.858370", "2.294481")
+# Wiki.extract("48.858370", "2.294481")

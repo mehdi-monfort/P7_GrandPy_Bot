@@ -56,12 +56,11 @@ input[type=text] {
   scrollbar-width: thin;
 }
 
-#message {
+#messageUser {
   background:#759d61; 
   padding: 15px; 
   border-radius:3px; 
-  max-width:50%;
-  align-self: stretch;
+  max-width:60%;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
@@ -81,7 +80,7 @@ input[type=text] {
   border-style: hidden;
   border-radius: 10px;
   font-size: 14px;
-  width: 50%;
+  max-width: 50%;
 }
 
 #wiki {
