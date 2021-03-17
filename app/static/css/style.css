@@ -35,7 +35,7 @@ input[type=text] {
   text-align: center;
   width: 80%;
   height: 30px;
-  bottom: 6%;
+  bottom: 8%;
   border-radius: 20px;
   position: fixed; 
   z-index: 10;
@@ -121,13 +121,13 @@ input[type=text] {
   align-items: center;
   bottom: 0;
   width: 100%;
-  min-height: 55px;
+  height: 55px;
   font-size: x-large;
   background-color: #5D6FA1;
   position: relative;
 }
 
-@media (height > 900px) {
+/*@media (height > 900px) {
     .footer { 
       margin-top: 31px;
     }
@@ -137,7 +137,7 @@ input[type=text] {
     .footer { 
       margin-top: 65px;
     }
-}
+}*/
 
 @media (width < 900px) and (orientation: portrait) {
     .footer { 
@@ -145,8 +145,9 @@ input[type=text] {
     }
 }
 
-@media (width < 900px) and (orientation: landscape) {
+/*@media (width < 900px) and (orientation: landscape) {
   input[type=text] {
     margin-bottom: 5%;
     }
 }
+*/
