@@ -1,7 +1,7 @@
 # coding: utf-8
 import os
 import requests
-from .constants import API_KEY, GEOCODE_BASE_URL
+from .settings import API_KEY, GEOCODE_BASE_URL
 # from pprint import pprint
 
 
@@ -18,8 +18,5 @@ class Maps:
             result = requests.get(url, params=params)
             response_map = result.json()
             return response_map['results'][0]['geometry']['location']
-        except IndexError:
-            pass
-        # print(response_map['results'][0]['geometry']['location'])
-
-# print(os.getenv('MAPS'))
+        except IndexError as err:
+            print(err)
