@@ -6,8 +6,9 @@ from .settings import API_KEY, GEOCODE_BASE_URL
 
 
 class Maps:
-
+    """obtaining coordinates"""
     def geocode(address):
+        """obtaining coordinates: longitude, latitude"""
         params = {
             "address": address,
             "key": API_KEY,

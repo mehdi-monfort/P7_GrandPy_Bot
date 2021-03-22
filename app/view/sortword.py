@@ -6,7 +6,7 @@ import random
 
 
 class Sortword:
-
+    """select the words to keep """
     def __init__(self):
         
         self.stop_words = get_stop_words('fr')
@@ -15,6 +15,7 @@ class Sortword:
         self.words_filtered = []
 
     def add_word(self):
+        """add the words to the list"""
         for word in self.stop_words:
             self.my_words.append(word)
 
@@ -22,7 +23,7 @@ class Sortword:
             self.my_words.append(word)
    
     def regword(self, input):
-        
+        """remove the words present in the list"""
         self.add_word()
         regex = r"[._,-?]"
         subst = " "
