@@ -1,1 +1,1 @@
-web: gunicorn config.wgsi --log-file -
+web: gunicorn app:app
