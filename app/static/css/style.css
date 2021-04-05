@@ -50,9 +50,8 @@ input[type=text] {
 
 .scroller {
   width: 90%;
-  height: 800px;
+  height: 650px;
   overflow-y: scroll;
-  scrollbar-color: grey;
   scrollbar-width: thin;
 }
 
@@ -119,7 +118,7 @@ input[type=text] {
   flex-shrink: 0;
   justify-content: flex-end;
   align-items: center;
-  bottom: 0;
+  top: 85px;
   width: 100%;
   height: 55px;
   font-size: x-large;
@@ -127,27 +126,17 @@ input[type=text] {
   position: relative;
 }
 
-/*@media (height > 900px) {
-    .footer { 
-      margin-top: 31px;
-    }
-}
-
 @media (width < 1200px) and (orientation: portrait) {
-    .footer { 
-      margin-top: 65px;
+    .scroller { 
+      height: 1000px;
     }
-}*/
-
-@media (width < 900px) and (orientation: portrait) {
-    .footer { 
-      margin-top: 322px;
+    .footer {
+      top: 122px;
     }
 }
 
-/*@media (width < 900px) and (orientation: landscape) {
+@media (width < 900px) and (orientation: landscape) {
   input[type=text] {
     margin-bottom: 5%;
     }
 }
-*/
