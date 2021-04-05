@@ -2,7 +2,6 @@
 import os
 import requests
 from .settings import API_KEY, GEOCODE_BASE_URL
-# from pprint import pprint
 
 
 class Maps:

@@ -11,23 +11,23 @@ def test_geocode():
 
 class TestSortword:
 
+	def setup_method(self):
+		self.S = Sortword()
+
 	def test_regword(self):
 
 		self.input = "bonjour, que peux tu me dire de la tour eiffel ?"
-		S = Sortword()
-		assert S.regword(self.input) == ['tour', 'eiffel']
+		assert self.S.regword(self.input) == ['tour', 'eiffel']
 
 	def test_regword(self):
 
 		self.input = "qu'y a t'il d'intéressant sur paris ?"
-		S = Sortword()
-		assert S.regword(self.input) == ['paris']
+		assert self.S.regword(self.input) == ['paris']
 
 	def test_regword(self):
 		
 		self.input = "Où puis-je trouver la cathédrale de Quimper ?"
-		S = Sortword()
-		assert S.regword(self.input) == ['cathédrale', 'quimper']
+		assert self.S.regword(self.input) == ['cathédrale', 'quimper']
 
 def test_extract():
 
