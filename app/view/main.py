@@ -11,10 +11,9 @@ class Main:
 
         self.listData = [
             "Bip Bip, j'ai une réponse pour toi",
-            "Bip Bip, Données complête la réponse est",
+            "Bip Bip, Données complête, la réponse est",
             "Bip Bip, j'ai une histoire à ce sujet",
-            "Biiip, je connais très bien",
-            "Bip, voilà pour toi *bip"
+            "Biiip, je connais très bien, voici la réponse"
             ]
         self.listNoData = [
             "Bip Bip, données incomplête bip!",
