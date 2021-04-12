@@ -52,13 +52,12 @@ input[type=text] {
   width: 90%;
   height: 650px;
   overflow-y: scroll;
-  scrollbar-width: thin;
 }
 
 #messageUser {
-  background:#759d61; 
-  padding: 15px; 
-  border-radius:3px; 
+  background:#759d61;
+  float:right; 
+  padding: 15px;
   max-width:60%;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -71,9 +70,9 @@ input[type=text] {
 
 .messageRobo {
   background:#5D6FA1; 
+  float:left;
   color:#fff; 
   padding: 15px; 
-  border-radius:3px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-style: hidden;
@@ -86,7 +85,6 @@ input[type=text] {
   background:#5D6FA1; 
   color:#fff; 
   padding: 15px; 
-  border-radius:3px; 
   width:350px;
   align-self: stretch;
   justify-content: center;
@@ -100,6 +98,9 @@ input[type=text] {
 }
 
 #map {
+  background-image: url(../img/loader.gif);
+  background-position:center center;
+  background-repeat:no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;

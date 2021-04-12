@@ -80,3 +80,4 @@ function displayMap(loc) {
 	    icon: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png"
 	});
 }
+
