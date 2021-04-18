@@ -43,7 +43,6 @@ input[type=text] {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
   height: 90%;
   justify-content: center;
 }
@@ -73,12 +72,13 @@ input[type=text] {
   float:left;
   color:#fff; 
   padding: 15px; 
+  max-width:60%;
+  margin-right: 50%;
   margin-top: 20px;
   margin-bottom: 20px;
   border-style: hidden;
   border-radius: 10px;
   font-size: 14px;
-  max-width: 50%;
 }
 
 #wiki {
@@ -102,7 +102,6 @@ input[type=text] {
   background-position:center center;
   background-repeat:no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -125,6 +124,14 @@ input[type=text] {
   font-size: x-large;
   background-color: #5D6FA1;
   position: relative;
+}
+
+#robot {
+  position:absolute;
+  display:block;
+  z-index:10;
+  width: 25px;
+  height: 25px;
 }
 
 @media (width < 1200px) and (orientation: portrait) {
