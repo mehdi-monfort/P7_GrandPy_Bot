@@ -12,13 +12,31 @@
   border:0;
 }
 
+.waiting {
+  display: none;
+  position: absolute;
+  -webkit-animation: spin 1.5s linear infinite;
+  -moz-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+  }
+
+  @-moz-keyframes spin {
+    100% { -moz-transform: rotate(-360deg); }
+  }
+  @-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(-360deg); }
+  }
+  @keyframes spin {
+    100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+  }
+
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: x-large;
   min-height: 55px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background-color: #5D6FA1;
 }
 

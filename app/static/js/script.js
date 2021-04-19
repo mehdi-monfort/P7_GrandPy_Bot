@@ -11,8 +11,10 @@ function postFormData(url, data) {
 
 form.addEventListener("submit", function (event) {
 	event.preventDefault();
+	document.getElementById("waiting").style.display ='inline';
     postFormData("/view", new FormData(form))
     .then(response => {
+		document.getElementById("waiting").style.display ='none';
 		if(response[3]) {
 			const submit = response[0]
 			displayMessageUser(submit);
@@ -34,41 +36,41 @@ form.addEventListener("submit", function (event) {
 
 function displayMessageUser(submit) {
 	const parent = document.querySelector("ul");
-	const child = document.createElement("p");
-	child.id = "messageUser";
-	child.classList.add("messageUser");
-	parent.appendChild(child);
-	let messageUser = child;
+	const user = document.createElement("p");
+	user.id = "messageUser";
+	user.classList.add("messageUser");
+	parent.appendChild(user);
+	let messageUser = user;
 	messageUser.innerHTML = submit
 }
 
 function displayMessageRobo(mess) {
 	const parent = document.querySelector("ul");
-	const child = document.createElement("p");
-	child.id = "messageRobo";
-	child.classList.add("messageRobo");
-	parent.appendChild(child);
-	let messageRobo = child;
+	const robo = document.createElement("p");
+	robo.id = "messageRobo";
+	robo.classList.add("messageRobo");
+	parent.appendChild(robo);
+	let messageRobo = robo;
 	messageRobo.innerHTML = mess
 }
 
 function displayWiki(extract) {
 	const parent = document.querySelector("ul");
-	const child = document.createElement("p");
-	child.id = "wiki";
-	child.classList.add("wiki");
-	parent.appendChild(child);
-	let wiki = child;
+	const wikextract = document.createElement("p");
+	wikextract.id = "wiki";
+	wikextract.classList.add("wiki");
+	parent.appendChild(wikextract);
+	let wiki = wikextract;
 	wiki.innerHTML = extract
 }
 
 function displayMap(loc) {
 	const parent = document.querySelector("ul");
-	const child = document.createElement("div");
-	child.id = "map";
-	child.classList.add("map");
-	parent.appendChild(child);
-	const map = new google.maps.Map(child, {
+	const maploc = document.createElement("div");
+	maploc.id = "map";
+	maploc.classList.add("map");
+	parent.appendChild(maploc);
+	const map = new google.maps.Map(maploc, {
 		  zoom: 14,
 		  center: loc
 	});
