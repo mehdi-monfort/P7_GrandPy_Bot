@@ -11,10 +11,11 @@ function postFormData(url, data) {
 
 form.addEventListener("submit", function (event) {
 	event.preventDefault();
-	document.getElementById("waiting").style.display ='inline';
+	let wait = document.getElementById("img");
+	wait.style.display ='inline';
+	wait.classList.toggle('flip')
     postFormData("/view", new FormData(form))
     .then(response => {
-		document.getElementById("waiting").style.display ='none';
 		if(response[3]) {
 			const submit = response[0]
 			displayMessageUser(submit);

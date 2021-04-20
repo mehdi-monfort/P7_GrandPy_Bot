@@ -12,32 +12,27 @@
   border:0;
 }
 
-.waiting {
-  display: none;
-  position: absolute;
-  -webkit-animation: spin 1.5s linear infinite;
-  -moz-animation: spin 1.5s linear infinite;
-  animation: spin 1.5s linear infinite;
-  }
+.img {
+  transition: 1s;
+}
 
-  @-moz-keyframes spin {
-    100% { -moz-transform: rotate(-360deg); }
-  }
-  @-webkit-keyframes spin {
-    100% { -webkit-transform: rotate(-360deg); }
-  }
-  @keyframes spin {
-    100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
-  }
+.img.flip {
+  transform: rotateY(180deg);
+}
 
 .header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: #191919;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: x-large;
-  min-height: 55px;
+  min-height: 60px;
   margin-bottom: 10px;
   background-color: #5D6FA1;
+  position: relative;
+  border-radius: 0% 0% 25% 25%;
 }
 
 .body{
@@ -54,6 +49,7 @@ input[type=text] {
   width: 80%;
   height: 30px;
   bottom: 8%;
+  border-style: hidden;
   border-radius: 20px;
   position: fixed; 
   z-index: 10;
@@ -72,7 +68,8 @@ input[type=text] {
 }
 
 #messageUser {
-  background:#759d61;
+  background:#7a996d;
+  color:#191919;
   float:right; 
   padding: 15px;
   max-width:60%;
@@ -88,7 +85,7 @@ input[type=text] {
 .messageRobo {
   background:#5D6FA1; 
   float:left;
-  color:#fff; 
+  color:#191919; 
   padding: 15px; 
   max-width:60%;
   margin-right: 50%;
@@ -101,7 +98,7 @@ input[type=text] {
 
 #wiki {
   background:#5D6FA1; 
-  color:#fff; 
+  color:#191919; 
   padding: 15px; 
   width:350px;
   align-self: stretch;
@@ -133,10 +130,11 @@ input[type=text] {
 
 .footer {
   display: flex;
+  border-radius: 25% 25% 0% 0%;
   flex-shrink: 0;
   justify-content: flex-end;
   align-items: center;
-  top: 130px;
+  top: 138px;
   width: 100%;
   height: 55px;
   font-size: x-large;
@@ -144,16 +142,25 @@ input[type=text] {
   position: relative;
 }
 
-@media (max-width : 1200px) and (orientation: portrait) {
-    .scroller { 
-      height: 1000px;
-    }
-    .footer {
-      top: 122px;
+@media (max-height : 768px) and (orientation: landscape) {
+  .scroller {
+    height: 500px;
+  }
+  .footer {
+    top: 121px;
+  }
+  input[type=text] {
+    margin-bottom: 5%;
     }
 }
 
-@media (max-width : 900px) and (orientation: landscape) {
+@media (max-height : 1280px) and (orientation: portrait) {
+  .scroller {
+    height: 900px;
+  }
+  .footer {
+    top: 233px;
+  }
   input[type=text] {
     margin-bottom: 5%;
     }
