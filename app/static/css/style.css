@@ -23,6 +23,7 @@ html, body{
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
+  height: 100%;
 }
 
 .header {
@@ -40,6 +41,7 @@ html, body{
 
 .body{
   background:#191919;
+  position: relative;
 }
 
 input[type=text] {
@@ -69,6 +71,7 @@ input[type=text] {
   width: 90%;
   height: 650px;
   overflow-y: scroll;
+  position:relative;
 }
 
 #messageUser {
@@ -138,8 +141,11 @@ input[type=text] {
   border-radius: 25% 25% 0% 0%;
   flex-shrink: 0;
   justify-content: flex-end;
+  
   align-items: center;
-  top: 138px;
+  bottom: 0%;
+  left:0%;
+  right: 0%;
   width: 100%;
   height: 55px;
   font-size: x-large;
@@ -151,17 +157,11 @@ input[type=text] {
   .scroller {
     height: 900px;
   }
-  .footer {
-    top: 233px;
-  }
 }
 
 @media (max-height : 1024px) and (orientation: portrait) {
   .scroller {
     height: 750px;
-  }
-  .footer {
-    top: 127px;
   }
 }
 
@@ -169,24 +169,17 @@ input[type=text] {
   .scroller {
     height: 560px;
   }
-  .footer {
-    top: 105px;
-  }
 }
+
 @media (max-height : 760px) and (orientation: portrait) {
   .scroller {
     height: 525px;
   }
-  .footer {
-    top: 89px;
-  }
 }
+
 @media (max-height : 740px) and (orientation: portrait) {
   .scroller {
     height: 505px;
-  }
-  .footer {
-    top: 89px;
   }
 }
 
@@ -194,25 +187,16 @@ input[type=text] {
   .scroller {
     height: 500px;
   }
-  .footer {
-    top: 89px;
-  }
 }
 
 @media (max-height : 667px) and (orientation: portrait) {
   .scroller {
     height: 430px;
   }
-  .footer {
-    top: 90px;
-  }
 }
 
 @media (max-height : 667px) and (orientation: landscape) {
   .scroller {
     height: 430px;
-  }
-  .footer {
-    top: 50px;
   }
 }
