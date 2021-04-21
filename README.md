@@ -23,4 +23,4 @@ heroku site:
 License:
 	
 	Author: Monfort Mehdi
-	URL: https://github.com/mehdi-monfort/project3
+	URL: https://github.com/mehdi-monfort/P7_GrandPy
