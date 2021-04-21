@@ -20,9 +20,13 @@
   transform: rotateY(180deg);
 }
 
-.header {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+html, body{
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+  font-family: 'Roboto Mono', monospace;
   font-weight: bold;
+}
+
+.header {
   color: #191919;
   display: flex;
   align-items: center;
@@ -36,7 +40,6 @@
 }
 
 .body{
-  font-family: sans-serif; 
   background:#191919;
 }
 
@@ -129,6 +132,7 @@ input[type=text] {
 }
 
 .footer {
+  color: #191919;
   display: flex;
   border-radius: 25% 25% 0% 0%;
   flex-shrink: 0;
@@ -142,18 +146,6 @@ input[type=text] {
   position: relative;
 }
 
-@media (max-height : 768px) and (orientation: landscape) {
-  .scroller {
-    height: 500px;
-  }
-  .footer {
-    top: 121px;
-  }
-  input[type=text] {
-    margin-bottom: 5%;
-    }
-}
-
 @media (max-height : 1280px) and (orientation: portrait) {
   .scroller {
     height: 900px;
@@ -163,5 +155,79 @@ input[type=text] {
   }
   input[type=text] {
     margin-bottom: 5%;
+    }
+}
+
+@media (max-height : 1024px) and (orientation: portrait) {
+  .scroller {
+    height: 750px;
+  }
+  .footer {
+    top: 127px;
+  }
+  input[type=text] {
+    margin-bottom: 5%;
+    }
+}
+
+@media (max-height : 812px) and (orientation: portrait) {
+  .scroller {
+    height: 560px;
+  }
+  .footer {
+    top: 105px;
+  }
+  input[type=text] {
+    margin-bottom: 5%;
+    }
+}
+
+@media (max-height : 740px) and (orientation: portrait) {
+  .scroller {
+    height: 505px;
+  }
+  .footer {
+    top: 89px;
+  }
+  input[type=text] {
+    margin-bottom: 5%;
+    }
+}
+
+@media (max-height : 736px) and (orientation: portrait) {
+  .scroller {
+    height: 500px;
+  }
+  .footer {
+    top: 89px;
+  }
+  input[type=text] {
+    margin-bottom: 5%;
+    }
+}
+
+@media (max-height : 667px) and (orientation: portrait) {
+  .scroller {
+    height: 430px;
+  }
+  .footer {
+    top: 90px;
+  }
+  input[type=text] {
+    margin-bottom: 5%;
+    }
+}
+
+@media (max-height : 667px) and (orientation: landscape) {
+  .scroller {
+    height: 430px;
+  }
+
+  .footer {
+    top: 50px;
+  }
+
+  input[type=text] {
+    margin-bottom: 5.5%;
     }
 }
