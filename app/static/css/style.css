@@ -1,4 +1,5 @@
 *, ::before, ::after {
+  box-sizing: border-box;
   margin:0;
   padding:0;
   list-style: none;
@@ -11,6 +12,19 @@
   border:0;
 }
 
+.header {
+  font-weight: bold;
+  color: #191919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  min-height: 55px;
+  margin-bottom: 20px;
+  background-color: #5D6FA1;
+  border-radius: 0% 0% 25% 25%;
+}
+
 .img {
   transition: 5s;
 }
@@ -20,28 +34,11 @@
 }
 
 html, body{
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
   font-family: 'Roboto Mono', monospace;
-  font-weight: bold;
-  height: 100%;
-}
-
-.header {
-  color: #191919;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: x-large;
-  min-height: 60px;
-  margin-bottom: 10px;
-  background-color: #5D6FA1;
-  position: relative;
-  border-radius: 0% 0% 25% 25%;
 }
 
 .body{
   background:#191919;
-  position: relative;
 }
 
 input[type=text] {
@@ -53,12 +50,9 @@ input[type=text] {
   width: 80%;
   height: 30px;
   bottom: 8%;
-  border-style: hidden;
   border-radius: 20px;
   position: fixed; 
   z-index: 10;
-  margin-bottom: 5%;
-
 }
 
 .container {
@@ -71,15 +65,13 @@ input[type=text] {
   width: 90%;
   height: 650px;
   overflow-y: scroll;
-  position:relative;
 }
 
 #messageUser {
-  background:#7a996d;
-  color:#191919;
+  background:#759d61;
   float:right; 
   padding: 15px;
-  max-width:80%;
+  max-width:60%;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
@@ -92,9 +84,9 @@ input[type=text] {
 .messageRobo {
   background:#5D6FA1; 
   float:left;
-  color:#191919; 
+  color:#fff; 
   padding: 15px; 
-  max-width:80%;
+  max-width:60%;
   margin-right: 50%;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -105,7 +97,7 @@ input[type=text] {
 
 #wiki {
   background:#5D6FA1; 
-  color:#191919; 
+  color:#fff; 
   padding: 15px; 
   width:350px;
   align-self: stretch;
@@ -136,67 +128,41 @@ input[type=text] {
 }
 
 .footer {
+  font-weight: bold;
   color: #191919;
   display: flex;
-  border-radius: 25% 25% 0% 0%;
   flex-shrink: 0;
   justify-content: flex-end;
-  
   align-items: center;
-  bottom: 0%;
-  left:0%;
-  right: 0%;
+  top: 85px;
   width: 100%;
   height: 55px;
   font-size: x-large;
   background-color: #5D6FA1;
   position: relative;
+  border-radius: 25% 25% 0% 0%;
 }
 
-@media (max-height : 1280px) and (orientation: portrait) {
-  .scroller {
-    height: 900px;
-  }
+#robot {
+  position:absolute;
+  display:block;
+  z-index:10;
+  width: 25px;
+  height: 25px;
 }
 
-@media (max-height : 1024px) and (orientation: portrait) {
-  .scroller {
-    height: 750px;
-  }
+@media (width < 1200px) and (orientation: portrait) {
+    .scroller { 
+      height: 1000px;
+    }
+    .footer {
+      top: 122px;
+    }
 }
 
-@media (max-height : 812px) and (orientation: portrait) {
-  .scroller {
-    height: 560px;
-  }
+@media (width < 900px) and (orientation: landscape) {
+  input[type=text] {
+    margin-bottom: 5%;
+    }
 }
 
-@media (max-height : 760px) and (orientation: portrait) {
-  .scroller {
-    height: 525px;
-  }
-}
-
-@media (max-height : 740px) and (orientation: portrait) {
-  .scroller {
-    height: 505px;
-  }
-}
-
-@media (max-height : 736px) and (orientation: portrait) {
-  .scroller {
-    height: 500px;
-  }
-}
-
-@media (max-height : 667px) and (orientation: portrait) {
-  .scroller {
-    height: 430px;
-  }
-}
-
-@media (max-height : 667px) and (orientation: landscape) {
-  .scroller {
-    height: 430px;
-  }
-}
